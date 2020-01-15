@@ -1,6 +1,6 @@
 {
-  "name": "twig-html-loader",
-  "version": "0.1.7",
+  "name": "@rikishi/twig-html-loader",
+  "version": "0.1.8",
   "description": "Twig to html loader for webpack",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "loader-utils": "^1.1.0",
-    "twig": "^1.12.0"
+    "twig": "1.14.0"
   },
   "devDependencies": {
     "eslint": "^5.7.0",
