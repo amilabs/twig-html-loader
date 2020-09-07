@@ -50,9 +50,10 @@ module.exports = function loader(source) {
   source = relativePathsToAbsolutePathsForSourceFn(source, this.resourcePath);
 
   try {
+    const params = this.resourceQuery && utils.parseQuery(this.resourceQuery)
     const query = utils.getOptions(this) || {};
     let data = query.data || {};
-    const templateFile = require.resolve(this.resource);
+    const templateFile = require.resolve(this.resourcePath);
     const options = {
       path: templateFile,
       data: source,
@@ -89,6 +90,10 @@ module.exports = function loader(source) {
       if (typeof data !== 'object') {
         this.emitError('data parameter should return an object');
       }
+    }
+
+    if (params && typeof params.data === 'object') {
+      data = Object.assign({}, data, params.data)
     }
 
     const registry = [];
