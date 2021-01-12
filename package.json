@@ -1,5 +1,5 @@
 {
-  "name": "@rikishi/twig-html-loader",
+  "name": "@amilabs/twig-html-loader",
   "version": "0.1.9",
   "description": "Twig to html loader for webpack",
   "main": "index.js",
